@@ -6,7 +6,7 @@ namespace App;
 
 class Saveur
 {
-    private int $identifiant;
+    private string $identifiant;
     private string $nom;
 
     public function __construct(string $nom)
@@ -14,7 +14,7 @@ class Saveur
         $this->nom = $nom;
     }
 
-    public function getIdentifiant(): int
+    public function getIdentifiant(): string
     {
         return $this->identifiant;
     }
@@ -24,7 +24,7 @@ class Saveur
         return $this->nom;
     }
 
-    public function SetIdentifiant(int $identifiant): void
+    public function SetIdentifiant(string $identifiant): void
     {
         $this->identifiant = $identifiant;
     }
