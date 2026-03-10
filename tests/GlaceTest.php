@@ -2,6 +2,8 @@
 declare(strict_types=1);
 
 use PHPUnit\Framework\TestCase;
+use App\Glace;
+use App\Saveur;
 
 class GlaceTest extends TestCase
 {
@@ -15,7 +17,7 @@ class GlaceTest extends TestCase
         $this->assertIsString($glace2->getIdentifiant());
    }
 
-   public function fabricationValide() : void 
+   public function testFabricationValide() : void 
    {
      $glace = new Glace("Fraise");
      $glace->SetTempsFabrication(500);
@@ -23,7 +25,7 @@ class GlaceTest extends TestCase
      $this->assertNotNull($glace->getTempsFabrication());
    }
 
-   public function typeValide() : void 
+   public function testTypeValide() : void 
    {
      $glace = new Glace("pistache");
      $glace->SetType("cornet");
@@ -31,7 +33,7 @@ class GlaceTest extends TestCase
      $this->assertNotNull($glace->getType());
    }
 
-   public function prixAchatValide() : void 
+   public function testPrixAchatValide() : void 
    {
 
     $glace = new Glace("mangue");
@@ -43,7 +45,7 @@ class GlaceTest extends TestCase
 
    }
 
-   public function prixVenteValide () : void 
+   public function testPrixVenteValide () : void 
    {
     
     $glace = new Glace("citron");
@@ -56,7 +58,7 @@ class GlaceTest extends TestCase
     $this->assertNotNull($glace->getPrixVente());
    }
 
-   public function datePeremptionValide() : void 
+   public function testDatePeremptionValide() : void 
    {
     $glace = new Glace("framboise");
     $dateFuture = (new DateTime())->modify('+1 day');
@@ -67,7 +69,7 @@ class GlaceTest extends TestCase
 
    }
 
-   public function saveurValide() : void 
+   public function testSaveurValide() : void 
    {
     $saveur = new Saveur("menthe");
     $glace = new Glace("menthe");
