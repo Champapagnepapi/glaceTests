@@ -17,5 +17,10 @@ class SaveurTest extends TestCase
                 $this->assertIsString($saveur2->getIdentifiant());
      }
 
+     public function testNomValide() : void
+     {
+        
+     }
 
+    
 }
