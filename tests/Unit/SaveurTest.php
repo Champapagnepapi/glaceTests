@@ -28,6 +28,10 @@ class SaveurTest extends TestCase
 
      public function testDisponibiliteValide() : void
      {
-     
+         $saveur = new Saveur("Mangue", true);
+         $saveur->SetDisponible(false);
+
+         $this->assertIsBool($saveur->isDisponible());
+         $this->assertFalse($saveur->isDisponible());
      }
 }
