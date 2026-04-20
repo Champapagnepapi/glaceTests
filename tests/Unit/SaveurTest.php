@@ -19,8 +19,12 @@ class SaveurTest extends TestCase
 
      public function testNomValide() : void
      {
-        
+         $saveur = new Saveur("Fraise", true);
+         $saveur->SetNom("Pistache");
+
+         $this->assertIsString($saveur->getNom());
+         $this->assertNotNull($saveur->getNom());
      }
 
-    
+
 }
