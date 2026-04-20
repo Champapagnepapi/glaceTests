@@ -26,5 +26,8 @@ class SaveurTest extends TestCase
          $this->assertNotNull($saveur->getNom());
      }
 
-
+     public function testDisponibiliteValide() : void
+     {
+     
+     }
 }
