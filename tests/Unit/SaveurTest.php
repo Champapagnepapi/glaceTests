@@ -42,4 +42,10 @@ class SaveurTest extends TestCase
 
          new Saveur("");
      }
+
+    public function testIdentifiantsUniques(): void
+    {
+        
+
+    }
 }
