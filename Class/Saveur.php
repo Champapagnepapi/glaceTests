@@ -6,6 +6,8 @@ namespace App;
 
 class Saveur
 {
+    private static array $identifiantsUtilises = [];
+
     private string $identifiant;
     private string $nom;
     private bool $disponible;
@@ -18,6 +20,11 @@ class Saveur
 
         $this->nom = $nom;
         $this->disponible = $disponible;
+    }
+
+    public static function resetIdentifiantsUtilises(): void
+    {
+        self::$identifiantsUtilises = [];
     }
 
     public function getIdentifiant(): string
@@ -35,17 +42,26 @@ class Saveur
         return $this->disponible;
     }
 
-    public function SetIdentifiant(string $identifiant): void
+    public function setIdentifiant(string $identifiant): void
     {
+        if (in_array($identifiant, self::$identifiantsUtilises)) {
+            throw new \InvalidArgumentException("L'identifiant $identifiant est déjà utilisé.");
+        }
+
         $this->identifiant = $identifiant;
+        self::$identifiantsUtilises[] = $identifiant;
     }
 
-    public function SetNom(string $nom): void
+    public function setNom(string $nom): void
     {
+        if (empty($nom)) {
+            throw new \InvalidArgumentException("Le nom de la saveur ne peut pas être vide.");
+        }
+
         $this->nom = $nom;
     }
 
-    public function SetDisponible(bool $disponible): void
+    public function setDisponible(bool $disponible): void
     {
         $this->disponible = $disponible;
     }

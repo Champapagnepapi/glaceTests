@@ -37,15 +37,24 @@ class SaveurTest extends TestCase
 
      public function testNomVideInterdit(): void
      {
+       
          $this->expectException(InvalidArgumentException::class);
          $this->expectExceptionMessage("Le nom de la saveur ne peut pas être vide.");
 
          new Saveur("");
      }
 
-    public function testIdentifiantsUniques(): void
-    {
-        
+        public function testIdentifiantUnique(): void
+        {
+            $saveur1 = new Saveur("Citron", true);
+            $saveur2 = new Saveur("Orange", true);
+    
+            $saveur1->SetIdentifiant("S3");
+    
+            $this->expectException(InvalidArgumentException::class);
+            $this->expectExceptionMessage("L'identifiant S3 est déjà utilisé.");
+    
+            $saveur2->SetIdentifiant("S3");
+        }
 
-    }
 }
