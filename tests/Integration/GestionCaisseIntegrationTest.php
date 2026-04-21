@@ -22,6 +22,19 @@ class GestionCaisseIntegrationTest extends TestCase
 
         public function testCaisseEncaissementMultiple(): void
     {
+        $caisse = new Caisse();
+
+        $this->assertSame(0, $caisse->getSolde());
+
+        $caisse->encaisser(100);
+        $this->assertSame(100, $caisse->getSolde());
+
+        $caisse->encaisser(50);
+        $this->assertSame(150, $caisse->getSolde());
+    }
+
+        public function testCaisseDecaissementValide(): void
+    {
 
     }
 }
