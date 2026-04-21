@@ -10,8 +10,12 @@ class Saveur
     private string $nom;
     private bool $disponible;
 
-    public function __construct(string $nom, bool $disponible)
+    public function __construct(string $nom, bool $disponible = true)
     {
+        if (empty($nom)) {
+            throw new \InvalidArgumentException("Le nom de la saveur ne peut pas être vide.");
+        }
+
         $this->nom = $nom;
         $this->disponible = $disponible;
     }

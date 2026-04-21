@@ -34,4 +34,12 @@ class SaveurTest extends TestCase
          $this->assertIsBool($saveur->isDisponible());
          $this->assertFalse($saveur->isDisponible());
      }
+
+     public function testNomVideInterdit(): void
+     {
+         $this->expectException(InvalidArgumentException::class);
+         $this->expectExceptionMessage("Le nom de la saveur ne peut pas être vide.");
+
+         new Saveur("");
+     }
 }
