@@ -8,6 +8,11 @@ class CommandeTest extends TestCase
 {
     private function creerGlace(string $nomSaveur, int $prixVente): Glace
     {
+        $saveur = new Saveur($nomSaveur);
+        $glace = new Glace($nomSaveur, $saveur);
+        $glace->SetPrixVente($prixVente);
+
+        return $glace;
     }
 
    
