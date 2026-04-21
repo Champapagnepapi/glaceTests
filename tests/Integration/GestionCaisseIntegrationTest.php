@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Caisse;
 use App\Glace;
 use App\Saveur;
 
@@ -17,5 +18,10 @@ class GestionCaisseIntegrationTest extends TestCase
         $glace->SetPrixVente($prixVente);
 
         return $glace;
+    }
+
+        public function testCaisseEncaissementMultiple(): void
+    {
+
     }
 }
