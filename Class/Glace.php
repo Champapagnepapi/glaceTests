@@ -21,7 +21,7 @@ class Glace
         Saveur $saveur,
         int $prixVente = 10,
         string $identifiant = "", 
-        DateTime $datePeremption = null,
+        ?DateTime $datePeremption = null,
         int $tempsFabrication = 0, 
         int $prixAchat = 0
     ) {
