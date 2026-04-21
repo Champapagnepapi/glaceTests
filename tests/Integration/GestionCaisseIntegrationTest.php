@@ -35,6 +35,11 @@ class GestionCaisseIntegrationTest extends TestCase
 
         public function testCaisseDecaissementValide(): void
     {
+        $caisse = new Caisse();
 
+        $caisse->encaisser(200);
+        $caisse->decaisser(75);
+
+        $this->assertSame(125, $caisse->getSolde());
     }
 }
